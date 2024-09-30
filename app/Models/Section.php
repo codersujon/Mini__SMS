@@ -9,4 +9,16 @@ class Section extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'class_id'];
+
+     /*==== Relationship ====*/
+
+    // Section HasMany Student
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
+
+    // Section belongsTo a Classes
+    public function class(){
+        return $this->belongsTo(Classes::class, 'class_id');
+    }
 }

@@ -9,4 +9,13 @@ class Classes extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
+
+    
+    
+    /*==== Relationship ====*/
+    
+    // Classes HasMany Section
+    public function sections(){
+        return $this->hasMany(Section::class,'class_id');
+    }
 }
